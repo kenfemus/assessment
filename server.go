@@ -15,5 +15,6 @@ func main() {
 	e := echo.New()
 	e.POST("/expenses", expense.CreateHandler)
 	e.GET("/expenses/:id", expense.GetByIdHandler)
+	e.PUT("/expenses/:id", expense.UpdateHandler)
 	e.Logger.Fatal(e.Start(os.Getenv("PORT")))
 }
